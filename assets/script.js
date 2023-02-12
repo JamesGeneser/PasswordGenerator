@@ -1,5 +1,6 @@
 
 
+
 //generatePassword is a function that returns a value for the 'password' variable
 function generatePassword() {
     //the arrays hold all possible characters as strings
@@ -7,7 +8,21 @@ function generatePassword() {
     const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     const specialChar = ['!', '@', '#', '$', '%', '=', '&', '*', '?', '_'];
     //prompt asks for user input, 'Number' reassigns the string value input into a number
-    const passwordLength = Number(prompt("How long do you want your password to be? (Enter character number)"));
+    const passwordLength = Number(prompt("How long do you want your password to be? (Enter character number)"))
+
+
+    
+        if (passwordLength<8 || passwordLength>128){
+            alert("Invalid input. Please chose a character length between 8 and 128");
+            return "Invalid";
+        
+        }
+    
+    
+
+
+
+
     //'confirm' makes the const variable a boolean value
     const includeLowerCase = confirm("Do you want any lower-case letters in your password?");
     const includeUpperCase = confirm("Do you want any upper-case letters in your password?");
@@ -60,5 +75,4 @@ function generatePassword() {
   // Event listener 'listens' for the user to click the button and then runs the 'writePassword' function
   var generateBtn = document.querySelector("#generate");
   generateBtn.addEventListener("click", writePassword); // will run 
-  
   
